@@ -1,0 +1,28 @@
+header{
+  height: 4.8rem;
+  background-color: rgb(63, 70, 77)
+}
+
+h2{
+  color: white;
+}
+img{
+  object-fit: contain;
+  height: 10rem;
+}
+
+.card{
+min-width: 25%;
+max-width: 25%;
+}
+
+.card-deck{
+  justify-content: center;
+}
+
+.text-muted{
+  color: rgb(252, 248, 248)
+}
+p{
+  font-weight: bold;
+}
