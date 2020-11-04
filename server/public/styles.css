@@ -11,6 +11,10 @@ img{
   height: 10rem;
 }
 
+.img-detail{
+  height: 19rem;
+
+}
 .card{
 min-width: 25%;
 max-width: 25%;
@@ -25,4 +29,11 @@ max-width: 25%;
 }
 p{
   font-weight: bold;
+}
+.card-container{
+  max-width: 50rem ;
+}
+
+.back{
+  cursor: pointer;
 }
