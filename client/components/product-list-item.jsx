@@ -1,17 +1,13 @@
 import React from 'react';
-
+import PriceFormat from './priceFormat';
 export default function ProductListItem(props) {
-  const productPrice = props.products.price;
-  const prices = productPrice.toString().split('');
-  prices.splice((prices.length - 2), 0, '.');
-  const decimalPrice = prices.join('');
 
   return (
-    <div className="card mb-5">
+    <div className="card mb-5" onClick={() => props.setView('details', { productId: props.productId })}>
       <img src={props.products.image} alt={props.products.name} className="card-img-top"/>
       <div className="card-body">
         <h5 className="card-title">{props.products.name}</h5>
-        <p className="cardtext text-muted">${decimalPrice}</p>
+        <p className="cardtext text-muted">{PriceFormat(props.products.price)}</p>
         <p className="cardtext">{props.products.shortDescription}</p>
       </div>
     </div>

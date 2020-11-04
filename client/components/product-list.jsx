@@ -9,6 +9,7 @@ export default class ProductList extends React.Component {
     };
     this.getProducts = this.getProducts.bind(this);
     this.productList = this.productList.bind(this);
+
   }
 
   getProducts() {
@@ -23,10 +24,19 @@ export default class ProductList extends React.Component {
   }
 
   productList() {
-    const list = this.state.products.map(products => <ProductListItem key={products.productId} products={products} />);
+    // eslint-disable-next-line no-unused-vars
+    const list = this.state.products.map(products => {
+      return (
+        <ProductListItem
+          key={products.productId}
+          products={products}
+          productId={products.productId}
+          setView={ this.props.setView}/>
+      );
+    });
     return (
       <>
-        { list }
+        {list}
       </>
     );
   }
