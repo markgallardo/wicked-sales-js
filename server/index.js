@@ -48,6 +48,7 @@ app.get('/api/products/:productId', (req, res, next) => {
 });
 
 app.get('/api/cart', (req, res, next) => {
+  if (!req.session.cartId) return res.json([]);
   const select = `
           select "c"."cartItemId",
           "c"."price",
@@ -59,7 +60,7 @@ app.get('/api/cart', (req, res, next) => {
        join "products" as "p" using ("productId")
        where "c"."cartId" = $1
   `;
-  db.query(select, [req.session.cardId])
+  db.query(select, [req.session.cartId])
     .then(result => res.json(result.rows))
     .catch(err => {
       console.error(err);
@@ -69,7 +70,7 @@ app.get('/api/cart', (req, res, next) => {
 
 app.post('/api/cart', (req, res, next) => {
   const productId = parseInt(req.body.productId, 10);
-  if (!productId || productId < 1) {
+  if (!productId || productId <= 0) {
     return next(new ClientError('ProductId must be a positive interger', 400));
   }
   const select = `
@@ -131,12 +132,13 @@ app.post('/api/cart', (req, res, next) => {
       db.query(select, [result.cartItemId])
         .then(result => {
           return res.status(201).json(result.rows[0]);
-        })
-        .catch(err => {
-          console.error(err);
-          next(err);
         });
+    })
+    .catch(err => {
+      console.error(err);
+      next(err);
     });
+
 });
 
 app.use('/api', (req, res, next) => {
