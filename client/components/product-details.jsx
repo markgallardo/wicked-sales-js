@@ -28,7 +28,7 @@ export default class ProductDetails extends React.Component {
           <img src={this.state.product.image} alt={this.state.product.name} className="col-4 mb-3 img-detail"/>
           <div className="col-8">
             <h5>{this.state.product.name}</h5>
-            <p className="text-muted">{PriceFormat(this.state.product.price)}</p>
+            <p className="text-muted"><strong>{PriceFormat(this.state.product.price)}</strong></p>
             <h6>{this.state.product.shortDescription}</h6>
             <button className='btn btn-primary'onClick={() => this.props.addToCart(this.state.product)}>Add to Cart</button>
           </div>

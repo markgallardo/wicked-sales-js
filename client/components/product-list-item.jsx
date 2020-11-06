@@ -7,7 +7,7 @@ export default function ProductListItem(props) {
       <img src={props.products.image} alt={props.products.name} className="card-img-top"/>
       <div className="card-body">
         <h5 className="card-title">{props.products.name}</h5>
-        <p className="cardtext text-muted">{PriceFormat(props.products.price)}</p>
+        <p className="cardtext text-muted"><strong>{PriceFormat(props.products.price)}</strong></p>
         <p className="cardtext">{props.products.shortDescription}</p>
       </div>
     </div>

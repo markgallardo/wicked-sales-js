@@ -9,6 +9,7 @@ h2{
 img{
   object-fit: contain;
   height: 10rem;
+
 }
 
 .img-detail{
@@ -27,13 +28,17 @@ max-width: 25%;
 .text-muted{
   color: rgb(252, 248, 248)
 }
-p{
-  font-weight: bold;
-}
+
 .card-container{
   max-width: 50rem ;
 }
 
 .back{
   cursor: pointer;
+}
+.card-summary{
+  max-width: 1000px;
+}
+.img-summary{
+  max-width: 15rem;
 }
