@@ -1,5 +1,6 @@
 import React from 'react';
 import CartSummaryItem from './cart-summary-item';
+import TotalPrice from './total-price';
 
 export default function CartSummary(props) {
 
@@ -11,6 +12,12 @@ export default function CartSummary(props) {
         ? props.cart.map(item => <CartSummaryItem key={item.cartItemId} item={item}/>)
         : <h3>Your Cart is empty</h3>
       }
+      <div className="container">
+        <div className="row d-flex justify-content-between align-item-center">
+          <h5>Total:{TotalPrice(props.cart)}</h5>
+          <button onClick={() => props.setView('checkout', {})} className="btn btn-primary mr-5">Checkout</button>
+        </div>
+      </div>
     </>
   );
 }
