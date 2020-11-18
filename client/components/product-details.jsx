@@ -22,7 +22,7 @@ export default class ProductDetails extends React.Component {
     if (!this.state.product) return null;
 
     return (
-      <div className="row justify-content-center" >
+      <div className="row justify-content-center details-card" >
         <div className="col-11 d-flex flex-wrap border p-4">
           <div className="col-10 back" onClick={() => this.props.setView('catalog', {})}>Back to catalog</div>
           <img src={this.state.product.image} alt={this.state.product.name} className="col-4 mb-3 img-detail"/>

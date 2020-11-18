@@ -30,7 +30,7 @@ export default class CheckoutForm extends React.Component {
 
   render() {
     return (
-      <div className="container checkout-container">
+      <div className=" checkout-container">
         <div className="row">
           <h2 className="col-1"><strong>My Cart</strong></h2>
           <h5 className="col-12 text-muted">
