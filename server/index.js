@@ -164,6 +164,31 @@ app.post('/api/orders', (req, res, next) => {
     .catch(err => next(err));
 });
 
+app.delete('/api/cart/:cartItemId', (req, res, next) => {
+  const cartItemId = parseInt(req.params.cartItemId, 10);
+  if (!req.session.cartId) {
+    next(new ClientError('There must be a cartId in session', 400));
+  } else if (!cartItemId || cartItemId <= 0) {
+    next(new ClientError('The cartItemId must be a positive integer', 400));
+  } else {
+    const deleteItem = `
+    delete from "cartItems"
+      where "cartItemId" = $1
+      and "cartId" = $2
+    returning *;
+    `;
+
+    db.query(deleteItem, [cartItemId, req.session.cartId])
+      .then(result => {
+        if (result.rows[0]) {
+          res.sendStatus(204);
+        } else {
+          next(new ClientError(`The cartItemId of ${cartItemId} does not exist in the cartItems table`, 400));
+        }
+      }).catch(err => console.error(err));
+  }
+});
+
 app.use('/api', (req, res, next) => {
   next(new ClientError(`cannot ${req.method} ${req.originalUrl}`, 404));
 });

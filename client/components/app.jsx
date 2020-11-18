@@ -16,6 +16,7 @@ export default class App extends React.Component {
     this.getCartItems = this.getCartItems.bind(this);
     this.addToCart = this.addToCart.bind(this);
     this.placeOrder = this.placeOrder.bind(this);
+    this.updatedCart = this.updatedCart.bind(this);
   }
 
   componentDidMount() {
@@ -31,6 +32,10 @@ export default class App extends React.Component {
       .then(result => result.json())
       .then(items => this.setState({ cart: items }))
       .catch(err => console.error(err));
+  }
+
+  updatedCart() {
+    this.getCartItems();
   }
 
   addToCart(product) {

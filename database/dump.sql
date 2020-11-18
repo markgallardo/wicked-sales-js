@@ -271,6 +271,21 @@ COPY public."cartItems" ("cartItemId", "cartId", "productId", price) FROM stdin;
 47	38	3	2900
 48	39	2	2595
 49	39	5	9900
+50	40	1	2999
+51	40	2	2595
+52	41	2	2595
+53	42	2	2595
+54	42	1	2999
+55	43	1	2999
+56	43	2	2595
+57	44	1	2999
+58	45	2	2595
+59	45	2	2595
+60	45	4	999
+61	45	2	2595
+62	45	4	999
+72	46	1	997
+73	46	1	997
 \.
 
 
@@ -280,6 +295,14 @@ COPY public."cartItems" ("cartItemId", "cartId", "productId", price) FROM stdin;
 
 COPY public.carts ("cartId", "createdAt") FROM stdin;
 39	2020-11-05 18:57:13.003865-08
+40	2020-11-05 21:51:47.884378-08
+41	2020-11-05 22:03:52.522049-08
+42	2020-11-05 22:04:22.355642-08
+43	2020-11-05 22:07:36.457252-08
+44	2020-11-06 12:14:19.407408-08
+45	2020-11-06 13:29:28.486104-08
+46	2020-11-17 17:57:08.008903-08
+47	2020-11-17 22:00:23.573248-08
 \.
 
 
@@ -288,6 +311,12 @@ COPY public.carts ("cartId", "createdAt") FROM stdin;
 --
 
 COPY public.orders ("orderId", "cartId", name, "creditCard", "shippingAddress", "createdAt") FROM stdin;
+1	40	mark	123456789	820 javascript road	2020-11-05 22:02:24.605038-08
+2	41	mark	123456789	820 javascript road	2020-11-05 22:03:57.400613-08
+3	42	mark	123456789	820 javascript road	2020-11-05 22:04:59.151559-08
+4	43	mark	123456789	820 javascript road	2020-11-05 22:07:41.856142-08
+5	44		11111111111111111111		2020-11-06 13:29:26.209379-08
+6	45	mark gallardo	11111111111111111111	820 javascript road	2020-11-06 14:55:45.941043-08
 \.
 
 
@@ -296,12 +325,14 @@ COPY public.orders ("orderId", "cartId", name, "creditCard", "shippingAddress", 
 --
 
 COPY public.products ("productId", name, price, image, "shortDescription", "longDescription") FROM stdin;
-1	Shake Weight	2999	/images/shake-weight.jpg	Dynamic Inertia technology ignites muscles in arms, shoulders, and chest.	Lorem ipsum dolor amet fashion axe pour-over jianbing, adaptogen waistcoat tacos master cleanse pitchfork next level. Thundercats pour-over chartreuse 90's. Master cleanse hot chicken ennui offal. Freegan slow-carb offal hell of. Umami polaroid wolf slow-carb next level. Gentrify cardigan seitan, kombucha tacos chambray roof party typewriter man braid. Tote bag lo-fi hell of chia fam hammock.\\nAesthetic photo booth la croix, vaporware leggings biodiesel man braid tumeric skateboard tousled slow-carb four dollar toast synth pabst pickled. Typewriter church-key chia slow-carb vice gochujang actually. Shoreditch austin woke hot chicken, single-origin coffee ugh affogato four loko green juice. Migas iPhone four dollar toast mustache.
-2	ShamWow	2595	/images/shamwow.jpg	It's like a chamois, towel, and sponge, all in one! Soaks up to 10x it's weight in any liquid!	Lorem ipsum dolor amet fashion axe pour-over jianbing, adaptogen waistcoat tacos master cleanse pitchfork next level. Thundercats pour-over chartreuse 90's. Master cleanse hot chicken ennui offal. Freegan slow-carb offal hell of. Umami polaroid wolf slow-carb next level. Gentrify cardigan seitan, kombucha tacos chambray roof party typewriter man braid. Tote bag lo-fi hell of chia fam hammock.\\nAesthetic photo booth la croix, vaporware leggings biodiesel man braid tumeric skateboard tousled slow-carb four dollar toast synth pabst pickled. Typewriter church-key chia slow-carb vice gochujang actually. Shoreditch austin woke hot chicken, single-origin coffee ugh affogato four loko green juice. Migas iPhone four dollar toast mustache.
-3	Snuggie	2900	/images/snuggie.jpg	Super-Soft Fleece with pockets! One Size fits all Adults! Keeps you Warm & Your Hands-Free!	Lorem ipsum dolor amet fashion axe pour-over jianbing, adaptogen waistcoat tacos master cleanse pitchfork next level. Thundercats pour-over chartreuse 90's. Master cleanse hot chicken ennui offal. Freegan slow-carb offal hell of. Umami polaroid wolf slow-carb next level. Gentrify cardigan seitan, kombucha tacos chambray roof party typewriter man braid. Tote bag lo-fi hell of chia fam hammock.\\nAesthetic photo booth la croix, vaporware leggings biodiesel man braid tumeric skateboard tousled slow-carb four dollar toast synth pabst pickled. Typewriter church-key chia slow-carb vice gochujang actually. Shoreditch austin woke hot chicken, single-origin coffee ugh affogato four loko green juice. Migas iPhone four dollar toast mustache.
-4	Wax Vac	999	/images/wax-vac.jpg	Gentle way to remove ear wax. Safe and hygienic. Reduces the risk of painful infections.	Lorem ipsum dolor amet fashion axe pour-over jianbing, adaptogen waistcoat tacos master cleanse pitchfork next level. Thundercats pour-over chartreuse 90's. Master cleanse hot chicken ennui offal. Freegan slow-carb offal hell of. Umami polaroid wolf slow-carb next level. Gentrify cardigan seitan, kombucha tacos chambray roof party typewriter man braid. Tote bag lo-fi hell of chia fam hammock.\\nAesthetic photo booth la croix, vaporware leggings biodiesel man braid tumeric skateboard tousled slow-carb four dollar toast synth pabst pickled. Typewriter church-key chia slow-carb vice gochujang actually. Shoreditch austin woke hot chicken, single-origin coffee ugh affogato four loko green juice. Migas iPhone four dollar toast mustache.
-5	Ostrich Pillow	9900	/images/ostrich-pillow.jpg	Create your own snugly space in the world and feel-good anywhere with the ultimate cocoon pillow.	Lorem ipsum dolor amet fashion axe pour-over jianbing, adaptogen waistcoat tacos master cleanse pitchfork next level. Thundercats pour-over chartreuse 90's. Master cleanse hot chicken ennui offal. Freegan slow-carb offal hell of. Umami polaroid wolf slow-carb next level. Gentrify cardigan seitan, kombucha tacos chambray roof party typewriter man braid. Tote bag lo-fi hell of chia fam hammock.\\nAesthetic photo booth la croix, vaporware leggings biodiesel man braid tumeric skateboard tousled slow-carb four dollar toast synth pabst pickled. Typewriter church-key chia slow-carb vice gochujang actually. Shoreditch austin woke hot chicken, single-origin coffee ugh affogato four loko green juice. Migas iPhone four dollar toast mustache.
-6	Tater Mitts	830	/images/tater-mitts.jpg	8 Seconds is all you need with Tater Mitts. Quickly and easily prepare all your favorite potato dishes with Tater Mitts.	Lorem ipsum dolor amet fashion axe pour-over jianbing, adaptogen waistcoat tacos master cleanse pitchfork next level. Thundercats pour-over chartreuse 90's. Master cleanse hot chicken ennui offal. Freegan slow-carb offal hell of. Umami polaroid wolf slow-carb next level. Gentrify cardigan seitan, kombucha tacos chambray roof party typewriter man braid. Tote bag lo-fi hell of chia fam hammock.\\nAesthetic photo booth la croix, vaporware leggings biodiesel man braid tumeric skateboard tousled slow-carb four dollar toast synth pabst pickled. Typewriter church-key chia slow-carb vice gochujang actually. Shoreditch austin woke hot chicken, single-origin coffee ugh affogato four loko green juice. Migas iPhone four dollar toast mustache.
+1	Funko Pop!Phantom Assassin	997	/images/PA-dota2.png	From dota 2, Phantom assassin with sword, as a stylized pop vinyl from Funko!	From dota 2, Phantom assassin with sword, as a stylized pop vinyl from Funko! figure stands 3 3/4 inches and comes in a window display box. Check out the other dota 2 figures from Funko! collect them all!
+2	Funko Pop! Pudge	1099	/images/Pudge-dota2.png	From dota 2, pudge with cleaver, as a stylized pop vinyl from Funko!	From dota 2, Pudge with cleaver, as a stylized pop vinyl from Funko! figure stands 3 3/4 inches and comes in a window display box. Check out the other dota 2 figures from Funko! collect them all!
+3	Adult Latex Juggernaut Mask	4398	/images/juggMask.jpg	Take the role of your favorite DOTA 2 character with this high-end latex mask!	Take the role of your favorite DOTA 2 character with this high-end latex mask! Mask of the Juggernaut comes with yellow mirrored eyeshades. Shipped in polybag. Officially licensed. Sure to make a great gift for any DOTA 2 fan!
+4	Meepo Cowl Costume Beanie	1999	/images/meepoBeanie.jpg	Hood is constructed from a Jersey Knit Poly/Cotton blend. Ears are Velboa, a super soft acrylic fabric.	DOTA 2 MEEPO COWL COSTUME HAT BEANIE COSPLAY. Have you ever thought, "Man I really need 2 or 3 more copies of myself so I can field my on DOTA 2 team"? Now you kinda can! With our Meepo Cowl you can now feel like a clone of yourself! Multiply your effectiveness by the power of you! Disclaimer: Meepo Cowl does not grant the ability to teleport.
+5	Mirana Nendoroid Action Figure	4699	/images/miranaDota2.jpg	A Good Smile import from the game Dota 2 with numerous posing options	From Good Smile From Valve popular game DOTA 2 comes a Nendoroid of the Princess of the Moon who rides on her enormous feline familiar: Mirana! Her arms feature more articulation than most standard Nendoroid, allowing her to be posed aiming her beautiful bow at her enemies. Her neck is also articulated allowing you to create various different nuances when putting her on display. Her feline mount Morcant is included as an optional part to stand by her side! Enjoy the very first of the DOTA 2 Nendoroid in your collection! Purchases of this product will include bonus Comic Card illustrated by Yuko Osada and digital unlock code for an in-game item.
+6	SteelSeries Arctis 5 Dota 2	12999	/images/arctis5dota2.jpg	The limited edition Arctis 5 features Dota 2 character artwork by acclaimed Community Contributor,	The limited edition exterior features a special Dota 2-themed design, and the Arctis 5 underneath brings all the features that gamers have come to expect from the Arctis line. The Arctis 5 Dota 2 Edition is incredibly comfortable with its unique ski-goggle suspension headband, customized with the Dota 2 logo, and keeps gamers cool with its AirWeave ear cushions. The headset features the SteelSeries ClearCast Microphone, the best mic in gaming, DTS Headphone:X 7.1 surround sound, and PrismSync RGB illumination, all controlled through SteelSeries Engine.
+7	Rival 600 Dota2 Edition	8999	/images/mousedota2.jpg	Official Dota 2 licensed mouse features the doodle design of community artist Ced Alcalde	SteelSeries teamed up with Valve to develop the limited Dota 2 edition Rival 600 featuring a design by community artist Ced Alcalde.  The dual-sensor system combines true 1 to 1 tracking with breakthrough state-of-the art lift off distance detection.  Rival 600 also features an exclusive custom center-of-gravity tuning system with 256 weight configurations and a customizable range from 96g to 128g, ensuring the perfect weight and balance for everyone.  SteelSeries Engine software unlocks an impressive arsenal of Engine Apps that make customization easy and intuitive.(keyboard,headset and dota2 skill does not include!)
+8	Dota 2 Pudge Latex Mask 	4399	/images/PudgeMask.jpg	Mask of Pudge shows his green hair and grim expression, as well as the stitches that hold together his face.	Take the role of your favorite DOTA 2 character with this high-end latex mask! Mask of Pudge shows his green hair and grim expression, as well as the stitches that hold together his face. Includes an ingame code for a Treasure of the Shattered Hourglass. Shipped in polybag. Officially licensed. Sure to make a great gift for any DOTA 2 fan!
 \.
 
 
@@ -309,28 +340,28 @@ COPY public.products ("productId", name, price, image, "shortDescription", "long
 -- Name: cartItems_cartItemId_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."cartItems_cartItemId_seq"', 49, true);
+SELECT pg_catalog.setval('public."cartItems_cartItemId_seq"', 73, true);
 
 
 --
 -- Name: carts_cartId_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."carts_cartId_seq"', 39, true);
+SELECT pg_catalog.setval('public."carts_cartId_seq"', 47, true);
 
 
 --
 -- Name: orders_orderId_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."orders_orderId_seq"', 1, false);
+SELECT pg_catalog.setval('public."orders_orderId_seq"', 6, true);
 
 
 --
 -- Name: products_productId_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."products_productId_seq"', 1, false);
+SELECT pg_catalog.setval('public."products_productId_seq"', 8, true);
 
 
 --

@@ -1,6 +1,16 @@
+body{
+  background-image: url('images/dota2background.jpg');
+  background-repeat: repeat;
+  overflow-x: hidden;
+  height: fit-content;
+  width: fit-content;
+  background-position: center top;
+
+}
+
 header{
   height: 4.8rem;
-  background-color: rgb(63, 70, 77)
+  background-color: #bb2205;
 }
 
 h2{
@@ -19,8 +29,11 @@ img{
 .card{
 min-width: 25%;
 max-width: 25%;
+background-color:#ffffffd4;
 }
-
+.details-card{
+  background-color:#ffffffd4;
+}
 .card-deck{
   justify-content: center;
 }
@@ -41,4 +54,33 @@ max-width: 25%;
 }
 .img-summary{
   max-width: 15rem;
+}
+.header-logo{
+  height: 50px;
+
+}
+.header-font{
+ font-family: 'Risque', cursive; ;
+}
+
+.card-hover:hover::before{
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #ff3410;
+}
+.card-hover:hover{
+ color: #ffee10;
+  box-shadow: 0 0 20px #ff3410;
+  text-shadow: 0 0 20px #ff3410;
+  background-color: #1f1d1dc5;
+  cursor: pointer;
+}
+
+.product-img img{
+  width: 100%;
+	transition: 0.5s ease-in-out;
+}
+
+.product-img figure:hover img{
+ transform: scale(.8);
+ cursor: pointer;
 }
