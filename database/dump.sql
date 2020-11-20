@@ -229,63 +229,6 @@ ALTER TABLE ONLY public.products ALTER COLUMN "productId" SET DEFAULT nextval('p
 --
 
 COPY public."cartItems" ("cartItemId", "cartId", "productId", price) FROM stdin;
-1	13	2	2595
-2	14	2	2595
-3	15	2	2595
-4	16	2	2595
-5	17	2	2595
-6	18	2	2595
-7	19	2	2595
-8	20	2	2595
-9	21	2	2595
-10	22	2	2595
-11	23	2	2595
-12	24	2	2595
-13	25	2	2595
-14	26	2	2595
-15	27	2	2595
-16	28	2	2595
-17	29	2	2595
-18	30	2	2595
-19	31	2	2595
-20	33	2	2595
-21	34	2	2595
-22	35	6	830
-23	36	6	830
-31	36	6	830
-32	37	1	2999
-33	37	1	2999
-34	37	1	2999
-35	37	1	2999
-36	37	1	2999
-37	38	1	2999
-38	38	3	2900
-39	38	2	2595
-40	38	1	2999
-41	38	2	2595
-42	38	1	2999
-43	38	3	2900
-44	38	3	2900
-45	38	3	2900
-46	38	3	2900
-47	38	3	2900
-48	39	2	2595
-49	39	5	9900
-50	40	1	2999
-51	40	2	2595
-52	41	2	2595
-53	42	2	2595
-54	42	1	2999
-55	43	1	2999
-56	43	2	2595
-57	44	1	2999
-58	45	2	2595
-59	45	2	2595
-60	45	4	999
-61	45	2	2595
-62	45	4	999
-72	46	1	997
-73	46	1	997
 \.
 
 
@@ -294,15 +237,6 @@ COPY public."cartItems" ("cartItemId", "cartId", "productId", price) FROM stdin;
 --
 
 COPY public.carts ("cartId", "createdAt") FROM stdin;
-39	2020-11-05 18:57:13.003865-08
-40	2020-11-05 21:51:47.884378-08
-41	2020-11-05 22:03:52.522049-08
-42	2020-11-05 22:04:22.355642-08
-43	2020-11-05 22:07:36.457252-08
-44	2020-11-06 12:14:19.407408-08
-45	2020-11-06 13:29:28.486104-08
-46	2020-11-17 17:57:08.008903-08
-47	2020-11-17 22:00:23.573248-08
 \.
 
 
@@ -311,12 +245,6 @@ COPY public.carts ("cartId", "createdAt") FROM stdin;
 --
 
 COPY public.orders ("orderId", "cartId", name, "creditCard", "shippingAddress", "createdAt") FROM stdin;
-1	40	mark	123456789	820 javascript road	2020-11-05 22:02:24.605038-08
-2	41	mark	123456789	820 javascript road	2020-11-05 22:03:57.400613-08
-3	42	mark	123456789	820 javascript road	2020-11-05 22:04:59.151559-08
-4	43	mark	123456789	820 javascript road	2020-11-05 22:07:41.856142-08
-5	44		11111111111111111111		2020-11-06 13:29:26.209379-08
-6	45	mark gallardo	11111111111111111111	820 javascript road	2020-11-06 14:55:45.941043-08
 \.
 
 
@@ -340,14 +268,14 @@ COPY public.products ("productId", name, price, image, "shortDescription", "long
 -- Name: cartItems_cartItemId_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."cartItems_cartItemId_seq"', 73, true);
+SELECT pg_catalog.setval('public."cartItems_cartItemId_seq"', 88, true);
 
 
 --
 -- Name: carts_cartId_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."carts_cartId_seq"', 47, true);
+SELECT pg_catalog.setval('public."carts_cartId_seq"', 49, true);
 
 
 --

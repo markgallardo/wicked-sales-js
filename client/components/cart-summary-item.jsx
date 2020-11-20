@@ -23,14 +23,13 @@ export default class CartSummaryItem extends React.Component {
 
   render() {
     return (
-      <div className="row mb-3 justify-content-center details-card">
-        <div className="d-flex flex-wrap col-11 border p-4">
-          <img src={this.props.item.image} alt={this.props.item.name} className="img-detail col-4 mb-3"/>
-          <div className="col-8 mt-5">
+      <div className="container align-content-center justify-content-center details-card">
+        <div className="d-flex justify-content-center col-md-11 border p-4">
+          <img src={this.props.item.image} alt={this.props.item.name} className="img-detail "/>
+          <div className="card-body">
             <h5 >{this.props.item.name}</h5>
             <p className=" text-muted"><strong>{PriceFormat(this.props.item.price)}</strong></p>
             <p className="">{this.props.item.shortDescription}</p>
-            <button onClick={this.removeItemClick}>Remove to cart</button>
           </div>
         </div>
       </div>

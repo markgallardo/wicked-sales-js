@@ -30,9 +30,10 @@ export default class CheckoutForm extends React.Component {
 
   render() {
     return (
-      <div className=" checkout-container">
+
+      <div className="container-fluid summary-container details-card">
         <div className="row">
-          <h2 className="col-1"><strong>My Cart</strong></h2>
+          <h3 className=""><strong>My Cart</strong></h3>
           <h5 className="col-12 text-muted">
             Order Total: {TotalPrice(this.props.cart)}</h5>
         </div>
@@ -68,7 +69,7 @@ export default class CheckoutForm extends React.Component {
             </div>
             <div className="container">
               <div className="form-footer row justify-content-between">
-                <div className="btn text-muted" onClick={() => this.props.setView('catalog', {})}> Continue Shopping </div>
+                <div className="btn text-muted" onClick={() => this.props.setView('catalog', {})}><i className="fas fa-chevron-left"> Continue Shopping </i></div>
                 <button
                   className="btn btn-primary" onClick={this.submitOrder}> Place Order </button>
               </div>
@@ -76,6 +77,7 @@ export default class CheckoutForm extends React.Component {
           </form>
         </div>
       </div>
+
     );
   }
 }
