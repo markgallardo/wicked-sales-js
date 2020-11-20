@@ -8,7 +8,7 @@ export default function CartSummary(props) {
     <div className="container-fluid d-flex summary-container">
       <div className="row ">
         <div className="container details-card justify-content-center">
-          <div className="back" onClick={() => props.setView('catalog', {})}>
+          <div className="cursor" onClick={() => props.setView('catalog', {})}>
             <i className="fas fa-chevron-left">Back to catalog</i>
           </div>
           <h1 className="mt-1">My Cart</h1>

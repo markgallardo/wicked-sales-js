@@ -24,7 +24,7 @@ export default class ProductDetails extends React.Component {
     return (
       <div className="row justify-content-center details-card" >
         <div className="col-11 d-flex flex-wrap border p-4">
-          <div className="col-10 back" onClick={() => this.props.setView('catalog', {})}>Back to catalog</div>
+          <div className="col-10 cursor" onClick={() => this.props.setView('catalog', {})}><i className="fas fa-chevron-left">Back to catalog</i></div>
           <img src={this.state.product.image} alt={this.state.product.name} className="col-4 mb-3 img-detail"/>
           <div className="col-8">
             <h5>{this.state.product.name}</h5>
