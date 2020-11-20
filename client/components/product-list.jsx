@@ -24,7 +24,6 @@ export default class ProductList extends React.Component {
   }
 
   productList() {
-    // eslint-disable-next-line no-unused-vars
     const list = this.state.products.map(products => {
       return (
         <ProductListItem

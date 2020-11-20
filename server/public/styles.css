@@ -1,3 +1,8 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+ }
+
 body{
   background-image: url('images/dota2background.jpg');
   background-repeat: repeat;
@@ -23,12 +28,21 @@ img{
 }
 
 .img-detail{
-  height: 19rem;
+  height: 10rem;
 
 }
-.card{
-min-width: 25%;
-max-width: 25%;
+
+.cart-container{
+  width: 100vw;
+}
+.summary-container{
+  width: 100vw;
+}
+.cardItem{
+
+min-width: 30%;
+/* max-width: 25%; */
+/* flex-basis: calc(100% / 3); */
 background-color:#ffffffd4;
 }
 .details-card{
@@ -42,16 +56,15 @@ background-color:#ffffffd4;
   color: rgb(252, 248, 248)
 }
 
-.card-container{
-  max-width: 50rem ;
-}
+
 
 .back{
   cursor: pointer;
 }
 .card-summary{
-  max-width: 1000px;
+  width: 1000px;
 }
+
 .img-summary{
   max-width: 15rem;
 }
