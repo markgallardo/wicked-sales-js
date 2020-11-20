@@ -55,10 +55,7 @@ background-color:#ffffffd4;
 .text-muted{
   color: rgb(252, 248, 248)
 }
-
-
-
-.back{
+.cursor{
   cursor: pointer;
 }
 .card-summary{

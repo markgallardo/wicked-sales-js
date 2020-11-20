@@ -69,7 +69,7 @@ export default class CheckoutForm extends React.Component {
             </div>
             <div className="container">
               <div className="form-footer row justify-content-between">
-                <div className="btn text-muted" onClick={() => this.props.setView('catalog', {})}><i className="fas fa-chevron-left"> Continue Shopping </i></div>
+                <div className="cursor text-muted" onClick={() => this.props.setView('catalog', {})}><i className="fas fa-chevron-left"> Continue Shopping </i></div>
                 <button
                   className="btn btn-primary" onClick={this.submitOrder}> Place Order </button>
               </div>
