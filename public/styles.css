@@ -1,0 +1,104 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+ }
+
+body{
+  background-image: url('images/dota2background.jpg');
+  background-repeat: no-repeat;
+  overflow-x: hidden;
+  height: fit-content;
+  width: fit-content;
+  background-position: center top;
+
+}
+
+header{
+  height: 4.8rem;
+  background-color: #bb2205;
+}
+
+h2{
+  color: white;
+}
+img{
+  object-fit: contain;
+  height: 10rem;
+
+}
+
+.img-detail{
+  height: 10rem;
+
+}
+
+.cart-container{
+  width: 100vw;
+}
+.summary-container{
+  width: 100vw;
+}
+.cardItem{
+
+min-width: 30%;
+/* max-width: 25%; */
+/* flex-basis: calc(100% / 3); */
+background-color:#ffffffd4;
+}
+.details-card{
+  background-color:#ffffffd4;
+}
+.card-deck{
+  justify-content: center;
+}
+
+.text-muted{
+  color: rgb(252, 248, 248)
+}
+.cursor{
+  cursor: pointer;
+}
+.card-summary{
+  width: 1000px;
+}
+
+.img-summary{
+  max-width: 15rem;
+}
+.header-logo{
+  height: 50px;
+
+}
+.header-font{
+ font-family: 'Risque', cursive; ;
+}
+
+.card-hover:hover::before img{
+  width: 100%;
+	transition: 0.5s ease-in-out;
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #ff3410;
+}
+.card-hover:hover img {
+ color: #ffee10;
+  box-shadow: 0 0 20px #ff3410;
+  text-shadow: 0 0 20px #ff3410;
+  background-color: #1f1d1dc5;
+  cursor: pointer;
+  transform: scale(.8);
+ cursor: pointer;
+}
+
+.product-img img{
+  width: 100%;
+	transition: 0.5s ease-in-out;
+}
+
+.product-img figure:hover img{
+ transform: scale(.8);
+ cursor: pointer;
+}
+
+.logo{
+  width: 300px;
+}

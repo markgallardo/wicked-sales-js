@@ -3,8 +3,8 @@ import PriceFormat from './priceFormat';
 export default function ProductListItem(props) {
 
   return (
-    <div className="card mb-4 card-hover cardItem" onClick={() => props.setView('details', { productId: props.productId })}>
-      <div className="product-img column">
+    <div className="card mb-4 card-hover cardItem product-img" onClick={() => props.setView('details', { productId: props.productId })}>
+      <div className="column">
         <figure>
           <img src={props.products.image} alt={props.products.name} className="card-img-top"/>
         </figure>

@@ -21,7 +21,7 @@ Try the application live at https://thesecretshop.markgallardo.dev/
 
 ## Preview
   <p align="center">
-    <img src="">
+    <img src="/preview-image/thesecretshop.gif">
   </p>
 
 ## Features
@@ -39,7 +39,7 @@ Try the application live at https://thesecretshop.markgallardo.dev/
 1. Clone the repository.
 
     ```shell
-    git clone 
+    git clone
     cd wicked-sales-js
     ```
 
