@@ -42,8 +42,10 @@ export default class ProductList extends React.Component {
 
   render() {
     return (
-      <div className="card-deck">
-        {this.productList()}
+      <div className="container">
+        <div className="card-deck">
+          {this.productList()}
+        </div>
       </div>
     );
   }

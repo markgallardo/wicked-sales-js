@@ -1,39 +1,26 @@
 import React from 'react';
 import PriceFormat from './priceFormat';
 
-export default class CartSummaryItem extends React.Component {
-  constructor(props) {
-    super(props);
-    this.removeItemClick = this.removeItemClick.bind(this);
+export default function CartSummartItem(props) {
+  function removeItemClick() {
+    props.removeItem(props.item.cartItemId);
   }
-
-  removeItemClick() {
-    const cartItemId = this.props.item.cartItemId;
-    const requestOption = {
-      method: 'DELETE',
-      headers: { 'Content-type': 'application/json' }
-    };
-    fetch(`/api/cart/${cartItemId}`, requestOption)
-      .then()
-      .then(data => {
-        this.props.updatedCart();
-      })
-      .catch(err => console.error(err));
-  }
-
-  render() {
-    return (
-      <div className="container align-content-center justify-content-center details-card">
-        <div className="d-flex justify-content-center col-md-11 border p-4">
-          <img src={this.props.item.image} alt={this.props.item.name} className="img-detail "/>
+  return (
+    <div className="card details-card mb-2">
+      <div className="row align-content-center justify-content-center ">
+        <div className="col-md-4">
+          <img className="card-img-top" src={props.item.image} alt={props.item.name}/>
+        </div>
+        <div className="col-md-5">
           <div className="card-body">
-            <h5 >{this.props.item.name}</h5>
-            <p className=" text-muted"><strong>{PriceFormat(this.props.item.price)}</strong></p>
-            <p className="">{this.props.item.shortDescription}</p>
+            <h5 className="card-body">{props.item.name}</h5>
+            <p className=" text-muted card-subtitle"><strong>{PriceFormat(props.item.price)}</strong></p>
+            <p className="card-text">{props.item.shortDescription}</p>
           </div>
         </div>
+        <button className="btn btn-danger mb-2" onClick={removeItemClick}>remove</button>
       </div>
+    </div>
 
-    );
-  }
+  );
 }

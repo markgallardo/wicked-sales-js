@@ -31,14 +31,14 @@ export default class CheckoutForm extends React.Component {
   render() {
     return (
 
-      <div className="container-fluid summary-container details-card">
+      <div className="container details-card">
         <div className="row">
-          <h3 className=""><strong>My Cart</strong></h3>
+          <h3><strong>My Cart</strong></h3>
           <h5 className="col-12 text-muted">
             Order Total: {TotalPrice(this.props.cart)}</h5>
         </div>
         <div>
-          <form>
+          <form className="col-12" onSubmit={this.submitOrder}>
             <div className="form-group">
               <label htmlFor="name">Name</label>
               <input
@@ -46,7 +46,9 @@ export default class CheckoutForm extends React.Component {
                 type="text"
                 className="form-control"
                 value={this.state.name}
-                onChange={this.handleChange} />
+                onChange={this.handleChange}
+                required
+              />
             </div>
             <div className="form-group">
               <label htmlFor="creditCard">Credit Card</label>
@@ -55,7 +57,9 @@ export default class CheckoutForm extends React.Component {
                 type="text"
                 className="form-control"
                 value={this.state.creditCard}
-                onChange={this.handleChange} />
+                onChange={this.handleChange}
+                required
+              />
             </div>
             <div className="form-group">
               <label htmlFor="shippingAddress">Shipping Address</label>
@@ -64,14 +68,15 @@ export default class CheckoutForm extends React.Component {
                 className="form-control"
                 rows="3"
                 value={this.state.shippingAddress}
-                onChange={this.handleChange}>
+                onChange={this.handleChange}
+                required>
               </textarea>
             </div>
             <div className="container">
               <div className="form-footer row justify-content-between">
                 <div className="cursor text-muted" onClick={() => this.props.setView('catalog', {})}><i className="fas fa-chevron-left"> Continue Shopping </i></div>
                 <button
-                  className="btn btn-primary" onClick={this.submitOrder}> Place Order </button>
+                  className="mb-2 btn btn-primary"> Place Order </button>
               </div>
             </div>
           </form>

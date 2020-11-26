@@ -18,7 +18,7 @@ export default class App extends React.Component {
     this.getCartItems = this.getCartItems.bind(this);
     this.addToCart = this.addToCart.bind(this);
     this.placeOrder = this.placeOrder.bind(this);
-    this.updatedCart = this.updatedCart.bind(this);
+    this.removeItem = this.removeItem.bind(this);
   }
 
   componentDidMount() {
@@ -34,10 +34,6 @@ export default class App extends React.Component {
       .then(result => result.json())
       .then(items => this.setState({ cart: items }))
       .catch(err => console.error(err));
-  }
-
-  updatedCart() {
-    this.getCartItems();
   }
 
   addToCart(product) {
@@ -62,10 +58,24 @@ export default class App extends React.Component {
       headers: { 'content-type': ' application/json' }
     };
     fetch('/api/orders', request)
+      .then(res => res.json())
       .then(() => this.setState({
         view: { name: 'catalog', params: {} },
         cart: []
       }));
+  }
+
+  removeItem(itemId) {
+    const requestOption = {
+      method: 'DELETE',
+      headers: { 'Content-type': 'application/json' }
+    };
+    fetch(`/api/cart/${itemId}`, requestOption)
+      .then(() => {
+        const newCart = this.state.cart.filter(cartItem => cartItem.cartItemId !== itemId);
+        this.setState({ cart: newCart });
+      })
+      .catch(err => console.error(err));
   }
 
   render() {
@@ -77,7 +87,7 @@ export default class App extends React.Component {
     } else if (this.state.view.name === 'details') {
       view = <ProductDetails addToCart={this.addToCart} setView={this.setView} params={this.state.view.params}/>;
     } else if (this.state.view.name === 'cart') {
-      view = <CartSummary setView={this.setView} cart={this.state.cart} updatedCart={this.updatedCart}/>;
+      view = <CartSummary setView={this.setView} cart={this.state.cart} removeItem={this.removeItem}/>;
     } else if (this.state.view.name === 'checkoutDisclaimer') {
       view = <CheckoutDisclaimer cart={this.state.cart} placeOrder={this.placeOrder} setView={this.setView} />;
     } else if (this.state.view.name === 'checkout') {
