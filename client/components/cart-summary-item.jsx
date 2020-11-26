@@ -18,7 +18,9 @@ export default function CartSummartItem(props) {
             <p className="card-text">{props.item.shortDescription}</p>
           </div>
         </div>
-        <button className="btn btn-danger mb-2" onClick={removeItemClick}>remove</button>
+        <div className="mt-5">
+          <button className=" btn btn-danger mb-2" onClick={removeItemClick}>remove</button>
+        </div>
       </div>
     </div>
 
