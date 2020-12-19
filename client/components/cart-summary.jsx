@@ -4,6 +4,16 @@ import TotalPrice from './total-price';
 
 export default function CartSummary(props) {
 
+  function checkOutBtn() {
+    if (props.cart.length) {
+      return (
+        <div>
+          <button onClick={() => props.setView('checkoutDisclaimer', {})} className="btn btn-primary ml-1 mb-2">Checkout</button>
+        </div>
+      );
+    }
+  }
+
   return (
     <div className="container-fluid d-flex ">
       <div className="container ">
@@ -14,13 +24,13 @@ export default function CartSummary(props) {
           <h1 className="mt-1">My Cart</h1>
           <div className="container ml-3 d-flex justify-content-between align-item-center">
             <h5>Total:{TotalPrice(props.cart)}</h5>
-            <button onClick={() => props.setView('checkoutDisclaimer', {})} className="btn btn-primary ml-1 mb-2">Checkout</button>
+            {checkOutBtn()}
           </div>
         </div>
         <div className="container details-card">
           {props.cart.length
             ? props.cart.map(item => <CartSummaryItem key={item.cartItemId} item={item} removeItem={props.removeItem}/>)
-            : <h3 className="container details-card">Your Cart is empty</h3>
+            : <h3 className="container pb-3 details-card">Your Cart is empty</h3>
           }
         </div>
 
